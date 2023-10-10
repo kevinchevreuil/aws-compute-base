@@ -18,6 +18,11 @@ output "subnet-c" {
   value       = aws_subnet.kaisen-subnet-c.id
 }
 
+output "rta" {
+  description = "Route table association"
+  value       = aws_route_table.kaisen-rt.id
+}
+
 output "sg" {
   description = "Security_group"
   value       = aws_security_group.kaisen-default-sg.id
