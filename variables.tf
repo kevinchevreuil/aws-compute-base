@@ -5,5 +5,5 @@ variable "private_key_path" {
 
 variable "aws_region" {
   type    = string
-  default = "us-east-1"
+  default = "eu-west-3"
 }
