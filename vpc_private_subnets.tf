@@ -12,7 +12,7 @@ resource "aws_route_table" "kaisen-rt-private" {
 resource "aws_subnet" "kaisen-subnet-a-private" {
   vpc_id                  = aws_vpc.kaisen-vpc.id
   cidr_block              = "10.2.100.0/24"
-  availability_zone       = "${var.aws_region}a"
+  availability_zone       = data.aws_availability_zones.az-checker.names[0]
   map_public_ip_on_launch = false
   depends_on              = [aws_internet_gateway.kaisen-ig]
   tags = {
@@ -28,7 +28,7 @@ resource "aws_route_table_association" "kaisen-rta-a-private" {
 resource "aws_subnet" "kaisen-subnet-b-private" {
   vpc_id                  = aws_vpc.kaisen-vpc.id
   cidr_block              = "10.2.101.0/24"
-  availability_zone       = "${var.aws_region}b"
+  availability_zone       = data.aws_availability_zones.az-checker.names[1]
   map_public_ip_on_launch = false
   depends_on              = [aws_internet_gateway.kaisen-ig]
   tags = {
@@ -44,7 +44,7 @@ resource "aws_route_table_association" "kaisen-rta-b-private" {
 resource "aws_subnet" "kaisen-subnet-c-private" {
   vpc_id                  = aws_vpc.kaisen-vpc.id
   cidr_block              = "10.2.102.0/24"
-  availability_zone       = "${var.aws_region}c"
+  availability_zone       = data.aws_availability_zones.az-checker.names[2]
   map_public_ip_on_launch = false
   depends_on              = [aws_internet_gateway.kaisen-ig]
   tags = {
