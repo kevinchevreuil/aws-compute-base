@@ -24,5 +24,5 @@ data "aws_ami" "amazonlinux" {
 }
 
 data "aws_availability_zones" "az-checker" {
-  all_availability_zones = true
+  state = "available"
 }
