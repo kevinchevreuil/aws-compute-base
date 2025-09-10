@@ -4,7 +4,7 @@ data "aws_ami" "amazonlinux" {
   name_regex  = "^al2023-ami"
   filter {
     name   = "name"
-    values = ["al2023-ami*"]
+    values = ["al2023-ami*6.12*"]
   }
 
   filter {
