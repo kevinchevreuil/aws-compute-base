@@ -1,7 +1,7 @@
-resource "aws_security_group" "kaisen-default-sg" {
-  name        = "kaisen-default-sg"
-  description = "Security group for web-server with HTTP ports open within VPC"
-  vpc_id      = aws_vpc.kaisen-vpc.id
+resource "aws_security_group" "kdzdo-default-sg" {
+  name        = "Kdzdo Default Security Group"
+  description = "Security group for web-server with HTTP/HTTPS ports open within VPC"
+  vpc_id      = aws_vpc.kdzdo-vpc.id
   egress {
     from_port   = 0
     to_port     = 0
